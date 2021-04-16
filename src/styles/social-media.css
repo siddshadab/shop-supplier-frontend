@@ -1,0 +1,40 @@
+.olx-social-media{
+    width: 335px;
+    padding: 10px;
+    background-color: #ededed;
+    border-radius: 6px;
+    margin-top: 15px;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.uol-social-media{
+    display: flex;
+    width: 180px;
+    justify-content: space-between;
+    list-style: none;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+}
+.fa-2x{
+    font-size: 22px;
+    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    display: block;
+    padding: 5px;
+    color: white;
+    line-height: 29px;
+}
+.fa-facebook{
+    background: #3B5998;
+}
+.fa-youtube-play{
+    background: #CE1312;
+}
+.fa-phone{
+    background: #417505;
+}

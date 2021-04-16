@@ -1,0 +1,52 @@
+.login-form-grid{
+    width: 533px;
+    margin: 0 auto;
+}
+.login-style{
+    font-size: 15px;
+    font-weight: 200;
+    color: #626262;
+    margin-bottom: 10px;
+}
+.login-box{
+    border: 1px solid #e3e3e3;
+    padding: 5px 0px 10px;
+    background: #fff;
+    border-radius: 4px;
+    padding-bottom: 30px;
+}
+.login-form-inner{
+    padding: 0px 20px;
+    margin-top: 25px;
+    text-align: center
+}
+.label-form{
+    width: 103px;
+    padding: 10px;
+}
+.input-box{
+    width: 264px;
+    background-color: #fff;
+    border: 1px solid #818080;
+    border-right-color: #efede8;
+    border-bottom-color: #efede8;
+    padding: 5px 7px;
+    border-radius: 0;
+}
+.input-box-div{
+    padding: 10px;
+}
+.login-btn-div{
+    background-color: #f3f3f3;
+    padding: 14px 0px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.login-btn{
+    padding-right:36px;
+    padding-left: 36px;
+}
+.create-your-account{
+    margin-top: 15px;
+}
