@@ -1,6 +1,7 @@
 {
-  "name": "market-app",
-  "version": "0.1.0",
+  "name": "shopsupplier",
+  "version": "1.0.0",
+  "description": "Shop Supplier(Dream Startup)",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
@@ -22,5 +23,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddshadab/shop-supplier-frontend.git"
+  },
+  "keywords": [
+    "Shadab"
+  ],
+  "author": "Shadab siddiqui <siddShadab7@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siddshadab/shop-supplier-frontend.git"
+  },
+  "homepage": "https://github.com/siddshadab/shop-supplier-frontend.git"
 }
