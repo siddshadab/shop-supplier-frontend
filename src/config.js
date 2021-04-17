@@ -1,20 +1,30 @@
 require('dotenv').config()
+const env_dev=require('./env_dev.json');
+const env_prod =require('./env_prod.json');
+const env_local =require('./env.json');
 
 
 const loadEnvVariable = envName => {
-  const env = process.env;
+  var env
+  if(envName === "dev"){
+    env = env_dev;
+}else if(envName === "prod"){
+    env = env_prod;
+}else{
+    env =env_local;
+}
   if (env == null) {
     throw new Error(`Environment variable => ${envName} is undefined.`);
   }
   return env;
 };
 
-const config = {
+const config = { 
+  
   APP: {
-    APIURL = process.env.APIURL || 'http://localhost:8080/api/v1/',
-    PORT: process.env.PORT || 3000,  
-    PUBLIC_URL
-  },   
+    APIURL:  loadEnvVariable(process.env.ENV).APIURL || 'http://localhost:8080/api/v1/',    
+    PORT:   loadEnvVariable(process.env.ENV).PORT || 3003, 
+  },
 };
 
 
