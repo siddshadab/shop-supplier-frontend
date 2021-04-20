@@ -247,7 +247,7 @@ const Header = ({ classes, isSidebarOpened, toggleSidebar, ...props }) => (
       >
         <div className={classes.profileMenuUser}>
           <Typography variant="h4" weight="medium">
-            John Smith
+            Shadab siddiqui
           </Typography>
           <Typography
             className={classes.profileMenuLink}
@@ -255,7 +255,7 @@ const Header = ({ classes, isSidebarOpened, toggleSidebar, ...props }) => (
             color="primary"
             href=""
           >
-            Flalogic.com
+            Shopsupplier
           </Typography>
         </div>
         <MenuItem

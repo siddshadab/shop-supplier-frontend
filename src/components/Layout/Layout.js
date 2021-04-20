@@ -24,14 +24,8 @@ import Header from "../Header";
 import Sidebar from "../Sidebar";
 
 // pages
-import Dashboard from "../../pages/dashboard";
-import Typography from "../../pages/typography";
-import Notifications from "../../pages/notifications";
-import Maps from "../../pages/maps";
-import Tables from "../../pages/tables";
-import Icons from "../../pages/icons";
-import Charts from "../../pages/charts";
 import  AdPosting from '../../pages/addPost';
+import  ViewPosting from '../../pages/viewPost';
 
 // context
 import { useLayoutState } from "../../context/LayoutContext";
@@ -54,7 +48,7 @@ function Layout(props) {
           >
             <div className={classes.fakeToolbar} />
             <Switch>
-              <Route path="/app/dashboard" component={Dashboard} />
+              <Route path="/app/viewPost" component={ViewPosting} />
               <Route path="/app/addPost" component={AdPosting} />
 
               
@@ -63,9 +57,14 @@ function Layout(props) {
                 path="/app/ui"
                 render={() => <Redirect to="/app/ui/icons" />}
               />
-              <Route path="/app/addPost" component={AdPosting} />
-              <Route path="/app/addPost" component={AdPosting} />
-              <Route path="/app/addPost" component={AdPosting} />
+              <Route path="/app/compOpen" component={AdPosting} />
+              <Route path="/app/compInProgress" component={AdPosting} />              
+              <Route path="/app/compPast" component={AdPosting} />
+              <Route path="/app/compMap" component={AdPosting} />
+              <Route path="/app/freeOpen" component={AdPosting} />
+              <Route path="/app/freeInProgress" component={AdPosting} />
+              <Route path="/app/freePast" component={AdPosting} />
+              <Route path="/app/freeMap" component={AdPosting} />
             </Switch>
             <Box
               mt={5}

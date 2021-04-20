@@ -30,82 +30,67 @@ import {
 } from "../../context/LayoutContext";
 
 const structure = [
+  { id: 0, label: 'View', link: '/app/viewPost', icon: <HomeIcon /> },
+  { id: 1, label: 'PostAdd', link: '/app/addPost', icon: <HomeIcon /> },
   {
-    id: 0,
-    label: "Bidding-Freelancer",
+    id: 2,
+    label: "As Company",
     link: "/app/ui",
     icon: <UIElementsIcon />,
     children: [
       {        
-        label: "PostAd",
-        link: "/app/addPost",
+        label: "Open",
+        link: "/app/compOpen",
         icon: <TableIcon />,
       },
       {        
-        label: "ViewAd",
-        link: "/app/addPost",
+        label: "In Progress",
+        link: "/app/compInProgress",
         icon: <TableIcon />,
       },    
        {       
-        label: "View-Maps Details Of Adds",
-        link: "/app/addPost",
+        label: "Past",
+        link: "/app/compPast",
         icon: <TableIcon />,
-      },
+      },{       
+        label: "Map",
+        link: "/app/compMap",
+        icon: <TableIcon />,
+      }
     ],
   },
   {
-    id: 1,
-    label: "Used/New Machine",
+    id:3,
+    label: "Freelance",
     link: "/app/ui",
     icon: <UIElementsIcon />,
     children: [
       {        
-        label: "Add Post",
-        link: "/app/addPost",
+        label: "Open",
+        link: "/app/freeOpen",
         icon: <TableIcon />,
       },
-      {
-        
-        label: "View Post",
-        link: "/app/addPost",
+      {        
+        label: "In Progress",
+        link: "/app/freeInProgress",
         icon: <TableIcon />,
-      },
-      {
-        
-        label: "Map Based View",
-        link: "/app/addPost",
+      },    
+       {       
+        label: "Past",
+        link: "/app/freePast",
         icon: <TableIcon />,
-      },
+      },{       
+        label: "Map",
+        link: "/app/freeMap",
+        icon: <TableIcon />,
+      }
     ],
   },
-  {
-    id: 2,
-    label: "Service Freelancer",
-    link: "/app/ui",
-    icon: <UIElementsIcon />,
-    children: [
-      {        
-        label: "PostAd To Us",
-        link: "/app/addPost",
-        icon: <TableIcon />,
-      },
-      {        
-        label: "View-Freelancers",
-        link: "/app/addPost",
-        icon: <TableIcon />,
-      },
-      {       
-        label: "Approved/scheduled interview",
-        link: "/app/addPost",
-        icon: <TableIcon />,
-      }, 
-      
-    ],
-  },  
-  { id: 3, type: "divider" },
-  { id: 4, type: "title", label: "HELP" },  
-  { id: 5, label: "Support", link: "", icon: <SupportIcon /> },
-  { id: 6, label: "FAQ", link: "", icon: <FAQIcon /> },
+ 
+  { id: 4, type: "divider" },
+  { id: 5, type: "title", label: "HELP" },  
+  { id: 6, label: "Support", link: "", icon: <SupportIcon /> },
+  { id: 7, label: "FAQ", link: "", icon: <FAQIcon /> },
  
 ];
 

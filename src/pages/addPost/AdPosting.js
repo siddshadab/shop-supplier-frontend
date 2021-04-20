@@ -1,7 +1,18 @@
 import React, {Component} from 'react';
 import './add-posting.css';
+import configs from "../../config";
+import {
+    Grid,
+    CircularProgress,
+    Typography,
+    Button,
+    Tabs,
+    Tab,
+    TextField,
+    Fade,
+  } from "@material-ui/core";
 const axios = require('axios');
-// import { constants } from 'zlib';
+
 
 
 class AdPosting extends Component{
@@ -93,23 +104,42 @@ class AdPosting extends Component{
 
         onSubmitAd(e){
             console.log("testing onSubmitAd function");
-            const formData = new FormData();
-            formData.append('title',this.state.title);
-            formData.append('category', this.state.category);
-            formData.append('model', this.state.model);
-            formData.append('condition', this.state.condition);
-            formData.append('price', this.state.price);
-            formData.append('description', this.state.description);
-            formData.append('sellerName', this.state.sellerName);
-            formData.append('soldCity', this.state.soldCity);
-            formData.append('phoneNum', this.state.phoneNum);
-            formData.append('productImage',this.state.productImage);
+            console.log("this.state.title",this.state.title)
+            console.log("this.state.title",this.state.category)
+            console.log("this.state.title",this.state.model)
+            console.log("this.state.title",this.state.condition)
+            console.log("this.state.title",this.state.price)
+            console.log("this.state.title",this.state.description)
+            console.log("this.state.title",this.state.sellerName)
+            console.log("this.state.title",this.state.soldCity)
+            console.log("this.state.title",this.state.phoneNum)
+            //console.log("this.state.title",this.state.productImage)
+            var bodyFormData = new FormData();
+            bodyFormData.append('productImage',this.state.productImage);
+            bodyFormData.append('title',this.state.title);
+            bodyFormData.append('category', this.state.category);
+            bodyFormData.append('model', this.state.model);
+            bodyFormData.append('condition', this.state.condition);
+            bodyFormData.append('price', this.state.price);
+            bodyFormData.append('description', this.state.description);
+            bodyFormData.append('sellerName', this.state.sellerName);
+            bodyFormData.append('soldCity', this.state.soldCity);
+            bodyFormData.append('phoneNum', this.state.phoneNum);
+
+            // Display the key/value pairs
+            for (var pair of bodyFormData.entries()) {
+                console.log(pair[0]+ ', ' + pair[1]); 
+            }
+
             const config = {
                 headers: {
                     'content-type': 'multipart/form-data'
                 }
             };
-            axios.post("http://localhost:3001/post/adpost",formData,config)
+            var url= `${configs.APP.APIURL}adpost`
+            console.log("bodyFormData",bodyFormData.entries())
+            console.log("url",url)
+            axios.post(url,bodyFormData,config)
             .then((response) => {
                 this.setState({
                             title: '',
@@ -128,47 +158,6 @@ class AdPosting extends Component{
               });
             
 
-                // fetch('http://localhost:3001/post/adpost',{
-                //     method: 'POST',
-                //     headers: {
-                //         'Content-Type': 'application/json'
-                //       },
-                //       body: JSON.stringify({
-                //         title: this.state.title,
-                //         category: this.state.category,
-                //         model: this.state.model,
-                //         condition: this.state.condition,
-                //         price: this.state.price,
-                //         description: this.state.description,
-                //         sellerName: this.state.sellerName,
-                //         soldCity: this.state.soldCity,
-                //         phoneNum: this.state.phoneNum,
-                //         productImage: this.state.productImage
-                //       }),
-                // }).then(res => res.json())
-                // .then(json => {
-                //     console.log('json', json)
-                //     if(json.success){
-                //         this.setState({
-                //             adPostError: json.message,
-                            // title: '',
-                            // category: '',
-                            // model: '',
-                            // condition: '',
-                            // price: '',
-                            // description: '',
-                            // sellerName: '',
-                            // soldCity: '',
-                            // phoneNum: '',
-                            // productImage:''
-                //         })
-                //     }
-                //     else{
-                //         this.setState({
-                //             adPostError: json.message
-                //         });
-                //     }
-                // })
             e.preventDefault();
         };
 
@@ -176,19 +165,19 @@ class AdPosting extends Component{
         return(
             <div className="container">
             <div className="row">
-                <div className="col-lg-12">
-                    <div className="post-ad-container">
+                <div class="col-sm-8">
+                    
                     {
                         (this.state.adPostError) ? (
                             <strong><p>{this.state.adPostError}</p></strong>
                             ) : (null)
                     }
-                        <h3>Post Your Ad</h3>
+                        <h2>Post Your Ad</h2>
                         <form encType="multipart/form-data">
-                            <div className="form-group"></div>
-                            <div className="form-group">
+                            
+                        <div class="form-group">
                                 <label>Title</label>
-                                <input type="text" 
+                                <TextField type="text" 
                                 className="form-control" 
                                 value={this.state.title}
                                 onChange={this.onChangeTitle}
@@ -215,7 +204,7 @@ class AdPosting extends Component{
                             </div>
                             <div className="form-group">
                                 <label>Model</label>
-                                <input type="text" 
+                                <TextField type="text" 
                                 className="form-control" 
                                 value={this.state.model}
                                 onChange={this.onChangeModel}
@@ -232,7 +221,7 @@ class AdPosting extends Component{
                             </div>
                             <div className="form-group">
                                 <label>Price</label>
-                                <input type="text" 
+                                <TextField type="text" 
                                 className="form-control" 
                                 value={this.state.price}
                                 onChange={this.onChangePrice}
@@ -257,18 +246,7 @@ class AdPosting extends Component{
                                         className="form-control"/>
                                     </div>
                                 </div>
-                                {/* <div className="">
-                                    <div className="form-group">
-                                        <label>Image 2</label>
-                                        <input type="file" className="form-control"/>
-                                    </div>
-                                </div>
-                                <div className="">
-                                    <div className="form-group">
-                                        <label>Image 3</label>
-                                        <input type="file" className="form-control"/>
-                                    </div>
-                                </div> */}
+                                
                             </div>
                             <span className="text-danger"></span>
                             <div className="divider"></div>
@@ -277,7 +255,7 @@ class AdPosting extends Component{
                             </div>
                             <div className="form-group">
                                 <label>Seller Name</label>
-                                <input type="text" 
+                                <TextField type="text" 
                                 className="form-control" 
                                 value={this.state.sellerName}
                                 onChange={this.onChangeSellerName}
@@ -285,7 +263,7 @@ class AdPosting extends Component{
                             </div>
                             <div className="form-group">
                                 <label>Item to be sold in which city??*</label>
-                                <input type="text" 
+                                <TextField type="text" 
                                 className="form-control" 
                                 value={this.state.soldCity}
                                 onChange={this.onChangeCity}
@@ -293,7 +271,7 @@ class AdPosting extends Component{
                             </div>
                             <div className="form-group">
                                 <label>Seller phone number</label>
-                                <input type="text" 
+                                <TextField type="text" 
                                 className="form-control" 
                                 value={this.state.phoneNum}
                                 onChange={this.onChangePhoneNum}
@@ -309,7 +287,7 @@ class AdPosting extends Component{
                             </div>
                         </form>
                     </div>
-                </div>
+                
             </div>
         </div>
         )
