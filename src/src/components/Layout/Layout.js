@@ -31,7 +31,7 @@ import Maps from "../../pages/maps";
 import Tables from "../../pages/tables";
 import Icons from "../../pages/icons";
 import Charts from "../../pages/charts";
-import  AdPosting from '../../pages/AdPosting';
+import  AdPosting from '../../pages/addPost';
 
 // context
 import { useLayoutState } from "../../context/LayoutContext";

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../styles/add-posting.css';
+import './add-posting.css';
 const axios = require('axios');
 // import { constants } from 'zlib';
 
