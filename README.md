@@ -12,7 +12,7 @@ To get started with this app, follow the instructions below.
 * open in <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> 
 * npm start
 * start MongoDB server by typing "mongod" on cmd
-* start node server by typing "node server.js" on cmd
+* Clone node server from backend part
 
 Use this app to get inspiration and to read and write code (Further this app will go for commercial use).
 
